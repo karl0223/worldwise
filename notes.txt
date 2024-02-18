@@ -35,3 +35,23 @@ export default defineConfig({
 
 --------------------------------
 
+# Install React Router
+
+npm i react-router-dom
+
+# Structure  -- BrowserRouter -> Routes -> Route -> input path(url) and element(component)
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="products" element={<Products />} />
+        <Route path="pricing" element={<Pricing />} />
+        <Route path="*" element={<PageNotFound />} />       --- Catches all paths(urls) does not in the routes
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+--------------------------------
