@@ -1,0 +1,37 @@
+Install React with Vite
+
+npm create-vite@latest
+
+enter project name
+framework : React
+variant: JavaScript or any
+
+Run npm install inside the project folder to install dependencies
+
+
+--------------------------------
+
+# Configure Eslint
+
+Run:
+npm install eslint vite-plugin-eslint eslint-config-react-app --save-dev
+
+# Create new file in src
+
+".eslintrc.json"      -- file name
+
+{
+    "extends" : "react-app"
+}
+
+
+# In vite.config.js file
+
+import eslint from "vite-plugin-eslint";
+
+export default defineConfig({
+  plugins: [react(), eslint()],
+});
+
+--------------------------------
+
