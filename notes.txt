@@ -66,3 +66,15 @@ import { NavLink, Link } from "react-router-dom"
 <Link to=""> link </Link>
 
 --------------------------------
+
+# Using CSS module
+
+# Naming convention 
+
+componentName.module.css    --- PageNav.module.css
+
+# To set global css
+
+:global(.className)         --- :global(.active) || .nav :global(.active)
+
+--------------------------------
