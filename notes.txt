@@ -55,3 +55,14 @@ function App() {
 }
 
 --------------------------------
+
+# Create Link to different pages
+
+- You can use either NavLink or Link
+
+import { NavLink, Link } from "react-router-dom"
+
+<NavLink to=""> link </NavLink>   --- set the class to active (know what page is active)
+<Link to=""> link </Link>
+
+--------------------------------
