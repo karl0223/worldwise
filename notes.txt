@@ -78,3 +78,24 @@ componentName.module.css    --- PageNav.module.css
 :global(.className)         --- :global(.active) || .nav :global(.active)
 
 --------------------------------
+
+# Nested Router
+
+# Add the nested route(children) inside the parent route
+
+<Route path="app" element={<AppLayout />}>                    - parent route
+    <Route path="cities" element={<p>cities</p>} />           - children route
+    <Route path="countries" element={<p>countries</p>} />     - children route
+    <Route path="form" element={<p>form</p>} />               - children route
+</Route>
+
+# To use the children route, Use <Outlet /> in the components
+
+import { Outlet } from 'react-router-dom'
+<Outlet />
+
+# To set a default route to render, Use "index element"
+
+<Route index element={<Homepage />} />
+
+<Route index element={<p>dashboard</p>} />
