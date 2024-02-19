@@ -138,3 +138,28 @@ import { useParams } from "react-router-dom";
 
 --------------------------------
 
+# Saving State in the URL
+
+# Add the query string in the to={} in Link
+-- CityItem.jsx file
+
+<Link to={`${id}?lat=${position.lat}&lng=${position.lng}`} ></Link>
+
+# Reading and Setting Query String
+
+import { useSearchParams } from 'react-router-dom'
+
+const [searchParams, setSearchParams] = useSearchParams()
+
+# Get the query string
+
+const lat = searchParams.get('lat')
+const lng = searchParams.get('lng')
+
+# Use setSearchParams
+
+<button onClick={() => setSearchParams({lat: 23, lng: 50})}>Change Position</button>
+
+--------------------------------
+
+
