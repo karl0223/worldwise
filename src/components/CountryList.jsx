@@ -3,16 +3,7 @@ import CountryItem from "./CountryItem";
 import Spinner from "./Spinner";
 import Message from "./Message";
 
-const flagemojiToPNG = (flag) => {
-  var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
-    .map((char) => String.fromCharCode(char - 127397).toLowerCase())
-    .join("");
-  return (
-    <img src={`https://flagcdn.com/24x18/${countryCode}.png`} alt="flag" />
-  );
-};
-
-function CountryList({ cities, isLoading }) {
+function CountryList({ cities, isLoading, flagEmoji }) {
   if (isLoading) return <Spinner />;
 
   if (!cities.length)
@@ -22,10 +13,7 @@ function CountryList({ cities, isLoading }) {
 
   const countries = cities.reduce((arr, city) => {
     if (!arr.map((el) => el.country).includes(city.country)) {
-      return [
-        ...arr,
-        { country: city.country, emoji: flagemojiToPNG(city.emoji) },
-      ];
+      return [...arr, { country: city.country, emoji: flagEmoji(city.emoji) }];
     } else return arr;
   }, []);
 

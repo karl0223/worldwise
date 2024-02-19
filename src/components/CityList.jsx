@@ -3,7 +3,7 @@ import CityItem from "./CityItem";
 import Spinner from "./Spinner";
 import Message from "./Message";
 
-function CityList({ cities, isLoading }) {
+function CityList({ cities, isLoading, flagEmoji }) {
   if (isLoading) return <Spinner />;
 
   if (!cities.length)
@@ -13,7 +13,7 @@ function CityList({ cities, isLoading }) {
   return (
     <ul className={styles.cityList}>
       {cities.map((city) => (
-        <CityItem key={city.id} city={city} />
+        <CityItem key={city.id} city={city} flagEmoji={flagEmoji} />
       ))}
     </ul>
   );

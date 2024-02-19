@@ -1,3 +1,9 @@
+Make Scrollbar invisible
+
+scrollbar-color: transparent transparent;
+
+--------------------------------
+
 Install React with Vite
 
 npm create-vite@latest
@@ -113,6 +119,22 @@ import { Outlet } from 'react-router-dom'
 <Route index element={<Homepage />} />
 
 <Route index element={<p>dashboard</p>} />
+
+--------------------------------
+
+# Dynamic Routes with URL -- Nested URL
+
+# useParams to access the url parameters
+-- City.jsx file
+
+<Route
+  path="cities/:id"                                 -- Nested URL
+  element={<City flagEmoji={flagemojiToPNG} />}
+/>
+
+import { useParams } from "react-router-dom";
+
+  const { id } = useParams();
 
 --------------------------------
 

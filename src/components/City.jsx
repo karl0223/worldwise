@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import styles from "./City.module.css";
 
 const formatDate = (date) =>
@@ -8,7 +9,10 @@ const formatDate = (date) =>
     weekday: "long",
   }).format(new Date(date));
 
-function City() {
+function City({ flagEmoji }) {
+  const { id } = useParams();
+  console.log(id);
+
   // TEMP DATA
   const currentCity = {
     cityName: "Lisbon",
@@ -24,7 +28,7 @@ function City() {
       <div className={styles.row}>
         <h6>City name</h6>
         <h3>
-          <span>{emoji}</span> {cityName}
+          <span>{flagEmoji(emoji)}</span> {cityName}
         </h3>
       </div>
 
@@ -51,9 +55,7 @@ function City() {
         </a>
       </div>
 
-      <div>
-        {/* <ButtonBack /> */}
-      </div>
+      <div>{/* <ButtonBack /> */}</div>
     </div>
   );
 }

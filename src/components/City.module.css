@@ -4,6 +4,7 @@
   background-color: var(--color-dark--2);
   border-radius: 7px;
   overflow: scroll;
+  scrollbar-color: transparent transparent;
 
   width: 100%;
   display: flex;

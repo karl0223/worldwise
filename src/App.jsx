@@ -9,8 +9,18 @@ import AppLayout from "./pages/AppLayout";
 import Login from "./pages/Login";
 import CityList from "./components/CityList";
 import CountryList from "./components/CountryList";
+import City from "./components/City";
 
 const BASE_URL = "http://localhost:8000";
+
+const flagemojiToPNG = (flag) => {
+  var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
+    .map((char) => String.fromCharCode(char - 127397).toLowerCase())
+    .join("");
+  return (
+    <img src={`https://flagcdn.com/24x18/${countryCode}.png`} alt="flag" />
+  );
+};
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -31,6 +41,7 @@ function App() {
     }
     fetchCities();
   }, []);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -40,15 +51,37 @@ function App() {
         <Route path="app" element={<AppLayout />}>
           <Route
             index
-            element={<CityList cities={cities} isLoading={isLoading} />}
+            element={
+              <CityList
+                cities={cities}
+                isLoading={isLoading}
+                flagEmoji={flagemojiToPNG}
+              />
+            }
           />
           <Route
             path="cities"
-            element={<CityList cities={cities} isLoading={isLoading} />}
+            element={
+              <CityList
+                cities={cities}
+                isLoading={isLoading}
+                flagEmoji={flagemojiToPNG}
+              />
+            }
+          />
+          <Route
+            path="cities/:id"
+            element={<City flagEmoji={flagemojiToPNG} />}
           />
           <Route
             path="countries"
-            element={<CountryList cities={cities} isLoading={isLoading} />}
+            element={
+              <CountryList
+                cities={cities}
+                isLoading={isLoading}
+                flagEmoji={flagemojiToPNG}
+              />
+            }
           />
           <Route path="form" element={<p>form</p>} />
         </Route>
