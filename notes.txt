@@ -164,6 +164,8 @@ const lng = searchParams.get('lng')
 
 # Programmatic Navigation with useNavigate
 
+-- imperative way to use navigate
+
 import { useNavigate } from "react-router-dom";
 
 const navigate = useNavigate();
@@ -190,4 +192,11 @@ const navigate = useNavigate();
 
 --------------------------------
 
+# Declarative way to use Navigate
+
+import { Navigate } from "react-router-dom";
+
+<Route index element={<Navigate replace to="cities" />} />    --- redirect the page to "cities" url. use "replace" to access the move back button
+
+--------------------------------
 
