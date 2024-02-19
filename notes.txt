@@ -8,7 +8,21 @@ variant: JavaScript or any
 
 Run npm install inside the project folder to install dependencies
 
+--------------------------------
 
+# To run a Fake API 
+
+npm i json-server       - latest version
+
+npm i json-server@0     - Install this to use the delay
+
+# Add this to the script in package.json 
+
+"server": "json-server --watch data/cities.json --port 8000 --delay 500"     - delay is not available in the latest version of json-server
+
+# Run the server
+
+npm run server
 --------------------------------
 
 # Configure Eslint
@@ -99,3 +113,6 @@ import { Outlet } from 'react-router-dom'
 <Route index element={<Homepage />} />
 
 <Route index element={<p>dashboard</p>} />
+
+--------------------------------
+
