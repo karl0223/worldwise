@@ -200,3 +200,11 @@ import { Navigate } from "react-router-dom";
 
 --------------------------------
 
+# Including a Map using Leaflet Library
+
+npm i react-leaflet leaflet
+
+check the documentation how to implement
+check the changed files for the references
+
+--------------------------------
