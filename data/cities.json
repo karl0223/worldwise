@@ -35,6 +35,18 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "South Staffordshire",
+      "country": "United Kingdom",
+      "emoji": "🇬🇧",
+      "date": "2024-02-24T07:26:12.051Z",
+      "notes": "test",
+      "position": {
+        "lat": "52.55132210793798",
+        "lng": "-2.2192382812500004"
+      },
+      "id": 98443198
     }
   ]
 }
