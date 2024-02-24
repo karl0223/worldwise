@@ -58,11 +58,6 @@ function Form() {
           requestOptions
         );
         const data = await res.json();
-        console.log(data);
-
-        console.log(data.features[0].properties.country);
-        // console.log(data.features[0].properties.city)
-        // console.log(data.data.features[0].properties["country_code"])
 
         if (!data.features[0].properties.country)
           throw new Error(
